@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+
+
 import { showTime } from '../../showTime.js'
 
 const LocalClock = () => {
 const [localTime, setLocalTime] = useState(showTime())
-  
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -14,6 +16,7 @@ const [localTime, setLocalTime] = useState(showTime())
 
   return (
     <>
+      <div>{localTime}</div>
     </>
   )
 
