@@ -14,7 +14,8 @@ const [localTime, setLocalTime] = useState(showLocalTime())
     }, 1000)
   
   }) 
-
+  console.log(localTime)
+  
   return (
     <>
       <div id="local-time-container">
