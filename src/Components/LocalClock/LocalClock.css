@@ -1,0 +1,26 @@
+#local-time-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fac931;
+ 
+}
+
+#local-clock {
+margin-top: 20px;
+font-family: 'Pangolin', cursive;
+  color: #ff0fd7;
+}
+
+
+#time-text {
+ margin-bottom: -20px;
+border-top: 2px solid black;
+justify-content: space-between;
+align-items: flex-end;
+display: flex;
+color: black;
+font-size: 12px;
+font-family: 'Noto Sans TC', sans-serif;
+}
