@@ -3,11 +3,14 @@ import axios from 'axios'
 
 const WorldClock = () => {
   const [apiData, setApiData] = useState('')
+console.log(apiData)
+  const url = `http://worldtimeapi.org/api/timezone/`
+ 
 
   useEffect(() => {
     const makeApiCall = async () => {
-      const data = await axios.get("http://worldtimeapi.org/api/timezone")
-      console.table(data.data)
+      const data = await axios.get(url)
+      console.log(data.data)
       setApiData(data.data)
     }
     makeApiCall();
@@ -15,7 +18,9 @@ const WorldClock = () => {
 
   return (
     <>
+  
     </>
+    
 )
 }
 
