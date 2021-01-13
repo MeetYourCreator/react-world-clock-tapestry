@@ -7,7 +7,9 @@ const App = () => {
 
   return (
     <>
-      <LocalClock />
+      <div className='clock-grid'>
+        <LocalClock />
+      </div>
     </>
 )
 }

@@ -1,22 +1,27 @@
 import React, { useEffect, useState } from 'react';
+import './LocalClock.css'
 
 
-import { showTime } from '../../showTime.js'
+import { showLocalTime } from '../../services/showTime.js'
 
 const LocalClock = () => {
-const [localTime, setLocalTime] = useState(showTime())
+const [localTime, setLocalTime] = useState(showLocalTime())
 
 
   useEffect(() => {
     setTimeout(() => {
-      setLocalTime(showTime())
+      setLocalTime(showLocalTime())
     }, 1000)
   
   }) 
 
   return (
     <>
-      <div>{localTime}</div>
+      <div id="local-time-container">
+        <div id="local-clock">{localTime}</div>
+        
+          <p id="time-text">LocalTime</p>
+      </div>
     </>
   )
 

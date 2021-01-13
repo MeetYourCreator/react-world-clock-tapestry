@@ -1,4 +1,4 @@
-export const showTime = () => {
+export const showLocalTime = () => {
   
   let time = new Date();
   let hour = time.getHours();
@@ -6,11 +6,11 @@ export const showTime = () => {
   let second = time.getSeconds();
   let am_pm = 'AM';
 
-  if (hour >= 12) {
+  if (hour > 12) {
     hour -= 12;
-    let am_pm = 'PM'
+    am_pm = 'PM'
   } else {
-    let am_pm = 'AM'
+    am_pm = 'AM'
   }
 
   hour = hour < 10 ? '0' + hour : hour;
