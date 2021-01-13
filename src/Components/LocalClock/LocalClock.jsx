@@ -14,7 +14,7 @@ const [localTime, setLocalTime] = useState(showLocalTime())
     }, 1000)
   
   }) 
-  console.log(localTime)
+ 
   
   return (
     <>
