@@ -3,8 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid #fac931;
- 
+  border-top: 2px solid #fac931;
+  border-right: 2px solid #fac931;
+  border-bottom: 2px solid #fac931;
+  border-left: 2px solid #fac931;
 }
 
 .world-clock {
