@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { v4 as uuid4 } from 'uuid'
 import './WorldClock.css'
+import WorldClockChild from '../WorldClockChild/WorldClockChild.jsx'
 
-const WorldClock = () => {
+const WorldClock = ({id, timestamp, zonename}) => {
   const [apiData, setApiData] = useState([])
   const [worldTime, setWorldTime] = useState({})
 
@@ -38,14 +39,12 @@ useEffect(() => {
     <>
       {apiData.map((clock) => (
         // console.table(clock)
-        <div
+        <WorldClockChild
           key={uuid4()}
-          className="world-time-container"
+          id={uuid4()}
           timestamp={clock.timestamp}
-        >
-          <span className="world-clock">{clock.timestamp}</span>
-          <p className="world-time-text">{clock.zoneName}</p>
-        </div>
+          zonename={clock.zoneName}
+        />
       ))}
     </>
   )
