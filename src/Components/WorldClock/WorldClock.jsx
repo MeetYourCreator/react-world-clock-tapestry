@@ -4,16 +4,16 @@ import { v4 as uuid4 } from 'uuid'
 import './WorldClock.css'
 import WorldClockChild from '../WorldClockChild/WorldClockChild.jsx'
 
-const WorldClock = ({id, timestamp, zonename}) => {
+const WorldClock = () => {
   const [apiData, setApiData] = useState([])
-  const [worldTime, setWorldTime] = useState({})
+  // const [worldTime, setWorldTime] = useState()
 
  
   console.log()
   const url = `http://api.timezonedb.com/v2.1/list-time-zone?key=7KJHTP7QS6J7&format=json`
  
 
-  console.log(`WorldTime: ${worldTime}`)
+  // console.log(`WorldTime: ${worldTime}`)
 
 
 useEffect(() => {
@@ -26,11 +26,11 @@ useEffect(() => {
    makeApiCall()
  }, [])
 
-  useEffect(() => {
-    setTimeout(() => {
-      setWorldTime(worldTime)
-    }, 2000)
-  }, [])
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setWorldTime(apiData)
+  //   }, 1000)
+  // }, [])
 
  
  
