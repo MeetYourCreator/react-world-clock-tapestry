@@ -1,7 +1,7 @@
 import React from 'react'
 import './WorldClockChild.css'
 
-const WorldClockChild = ({key, id, timestamp, zonename}) => {
+const WorldClockChild = ({id, timestamp, zonename}) => {
 
   return (
     <>
