@@ -1,0 +1,27 @@
+.world-time-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fac931;
+ 
+}
+
+.world-clock {
+margin-top: 30px;
+font-family: 'Pangolin', cursive;
+font-size: 9px;
+color: #ff0fd7;
+}
+
+
+.world-time-text {
+margin-bottom: 5px;
+border-top: 2px solid black;
+justify-content: center;
+align-items: flex-end;
+display: flex;
+color: black;
+font-size: 9px;
+font-family: 'Noto Sans TC', sans-serif;
+}
