@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { v4 as uuid4 } from 'uuid'
 
 const WorldClock = () => {
   const [apiData, setApiData] = useState([])
@@ -18,7 +19,13 @@ useEffect(() => {
 
   return (
     <>
-      <div>{apiData.map(clock => console.table(clock))}</div>
+      <div>
+        {apiData.map((clock) =>
+          // console.table(clock)
+          <div key={uuid4()}>{clock.countryCode}
+          </div>
+        )}
+      </div>
     </>
   )
 }
