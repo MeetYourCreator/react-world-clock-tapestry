@@ -8,14 +8,8 @@ const WorldClock = () => {
   const [apiData, setApiData] = useState([])
   // const [worldTime, setWorldTime] = useState()
 
+const url = `http://api.timezonedb.com/v2.1/list-time-zone?key=7KJHTP7QS6J7&format=json`
  
-  console.log()
-  const url = `http://api.timezonedb.com/v2.1/list-time-zone?key=7KJHTP7QS6J7&format=json`
- 
-
-  // console.log(`WorldTime: ${worldTime}`)
-
-
 useEffect(() => {
    const makeApiCall = async () => {
      const data = await axios.get(url)
@@ -26,15 +20,6 @@ useEffect(() => {
    makeApiCall()
  }, [])
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setWorldTime(apiData)
-  //   }, 1000)
-  // }, [])
-
- 
- 
- 
   return (
     <>
       {apiData.map((clock) => (

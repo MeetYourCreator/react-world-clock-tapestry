@@ -5,9 +5,8 @@ import { showWorldTime } from "../../services/showWorldTime.js"
 const WorldClockChild = ({id, timestamp, zonename}) => {
   const [worldTime, setWorldTime] = useState(showWorldTime(timestamp))
   
-  console.log(`WorldTime: ${worldTime}`)
-  console.log(`timestamp: ${timestamp}`)
-
+  console.log(`${zonename}: ${worldTime}`)
+  console.log(`${zonename}: ${timestamp}`)
 
   useEffect(() => {
     setTimeout(() => {
@@ -18,7 +17,7 @@ const WorldClockChild = ({id, timestamp, zonename}) => {
 
   return (
     <>
-      <div id={id} className="world-time-container" >
+      <div id={id} className='world-time-container'>
         <span className="world-clock">{worldTime}</span>
         <p className="world-time-text">{zonename}</p>
       </div>
