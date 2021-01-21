@@ -1,39 +1,28 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import { v4 as uuid4 } from 'uuid'
 import './WorldClock.css'
-import WorldClockChild from '../WorldClockChild/WorldClockChild.jsx'
+import { showWorldTime } from "../../services/showWorldTime.js"
 
-const WorldClock = () => {
-  const [apiData, setApiData] = useState([])
-  // const [worldTime, setWorldTime] = useState()
+const WorldClock = ({id, timestamp, zonename}) => {
+  const [worldTime, setWorldTime] = useState(showWorldTime(timestamp))
+  
+  console.log(`${zonename}: ${worldTime}`)
+  console.log(`${zonename}: ${timestamp}`)
 
-const url = `http://api.timezonedb.com/v2.1/list-time-zone?key=7KJHTP7QS6J7&format=json`
- 
-useEffect(() => {
-   const makeApiCall = async () => {
-     const data = await axios.get(url)
+  useEffect(() => {
+    setTimeout(() => {
+      setWorldTime(worldTime)
+    }, 1000)
+  }, []) 
 
-     setApiData(data.data.zones)
-     console.log(data.data.zones)
-   }
-   makeApiCall()
- }, [])
 
   return (
     <>
-      {apiData.map((clock) => (
-        // console.table(clock)
-        <WorldClockChild
-          key={uuid4()}
-          id={uuid4()}
-          timestamp={clock.timestamp}
-          zonename={clock.zoneName}
-        />
-      ))}
+      <div id={id} className='world-time-container'>
+        <span className="world-clock">{worldTime}</span>
+        <p className="world-time-text">{zonename}</p>
+      </div>
     </>
   )
 }
 
 export default WorldClock;
-
