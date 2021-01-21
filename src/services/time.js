@@ -3,9 +3,9 @@ import axios from 'axios'
 export const getAllTimeZones = async () => {
   const url = `http://api.timezonedb.com/v2.1/list-time-zone?key=7KJHTP7QS6J7&format=json`;
   const res = await axios.get(url);
+  console.log(`services getAllTimeZones: ${res}`)
   return res.data.zones;
 }
-
 
 export const showLocalTime = () => {
   let time = new Date();
@@ -31,7 +31,6 @@ export const showLocalTime = () => {
 }
 
 export const showWorldTime = (ms) => {
-  let millisecond = Math.floor((ms / 1000) % 1000);
   let second = Math.floor((ms / 1000) % 60);
   let minute = Math.floor((ms / (1000 * 60)) % 60);
   let hour = Math.floor((ms / (1000 * 60 * 60)) % 24);
@@ -48,5 +47,5 @@ export const showWorldTime = (ms) => {
     am_pm = 'AM'
   }
 
-  return hour + ":" + minute + ":" + second +  ":" + millisecond + ":" + am_pm
+  return hour + ":" + minute + ":" + second +  ":" + am_pm
 }
