@@ -5,7 +5,6 @@ const WorldClocks = ({ allTimeZones, worldtime }) => {
 
   return (
     <>
-      
         {allTimeZones.map((worldclock) => (
           <WorldClock
             key={uuid4()}
@@ -14,7 +13,6 @@ const WorldClocks = ({ allTimeZones, worldtime }) => {
             worldtime={worldtime}
           />
         ))}
-      
     </>
   )
 }
