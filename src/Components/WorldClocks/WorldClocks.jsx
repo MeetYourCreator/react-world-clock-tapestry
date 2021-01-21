@@ -10,7 +10,8 @@ const WorldClocks = ({ allTimeZones, worldtime }) => {
             key={uuid4()}
             timestamp={worldclock.timestamp}
             zonename={worldclock.zoneName}
-            worldtime={worldtime}
+            //passing a prop called worldtime with a value of {worldclock.timestamp}
+            worldtime={worldclock.timestamp}
           />
         ))}
     </>
