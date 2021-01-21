@@ -28,13 +28,12 @@ const WorldClockContainer = () => {
   }
    
   return (
-    <div>
+    <>
       <WorldClocks
         showTime={worldTime}
         allTimeZones={allTimeZones}
-        
         />
-    </div>
+    </>
   )
 }
 
