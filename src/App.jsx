@@ -2,7 +2,7 @@
 import React from 'react';
 import "./App.css"
 import LocalClock from "./Components/LocalClock/LocalClock.jsx"
-import WorldClock from './Components/WorldClock/WorldClock.jsx'
+import WorldClockContainer from './Containers/WorldClockContainer/WorldClockContainer.jsx'
 
 const App = () => {
 
@@ -10,7 +10,7 @@ const App = () => {
     <>
       <div className='clock-grid'>
         <LocalClock />
-        <WorldClock />
+        <WorldClockContainer />
       </div>
     </>
 )

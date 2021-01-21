@@ -1,22 +1,25 @@
-export const showWorldTime = (t) => {
-  let time = new Date(t)
-  let hour = time.getHours()
-  let minute = time.getMinutes()
-  let second = time.getSeconds()
-  let am_pm = "AM"
+export const showWorldTime = (ms) => {
+  let millisecond = Math.floor((ms / 1000) % 1000);
+  let second = Math.floor((ms / 1000) % 60);
+  let minute = Math.floor((ms / (1000 * 60)) % 60);
+  let hour = Math.floor((ms / (1000 * 60 * 60)) % 24);
+  let am_pm = 'AM';
+
+  hour = (hour < 10) ? "0" + hour : hour;
+  minute = (minute < 10) ? "0" + minute : minute;
+  second = (second < 10) ? "0" + second : second;
 
   if (hour > 12) {
-    hour -= 12
-    am_pm = "PM"
+    hour -= 12;
+    if (hour == 0) {
+      hour = 12;
+      am_pm = 'PM'
+    } else
+      hour -= 12;
+    am_pm = 'PM';
   } else {
-    am_pm = "AM"
+    am_pm = 'AM'
   }
 
-  hour = hour < 10 ? "0" + hour : hour
-  minute = minute < 10 ? "0" + minute : minute
-  second = second < 10 ? "0" + second : second
-
-  let currentTime = hour + ":" + minute + ":" + second + am_pm
-
-  return currentTime
+  return hour + ":" + minute + ":" + second +  ":" + millisecond + ":" + am_pm
 }
