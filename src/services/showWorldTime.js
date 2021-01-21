@@ -11,12 +11,7 @@ export const showWorldTime = (ms) => {
 
   if (hour > 12) {
     hour -= 12;
-    if (hour == 0) {
-      hour = 12;
-      am_pm = 'PM'
-    } else
-      hour -= 12;
-    am_pm = 'PM';
+    am_pm = 'PM'
   } else {
     am_pm = 'AM'
   }
