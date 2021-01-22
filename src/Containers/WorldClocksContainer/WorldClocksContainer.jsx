@@ -17,7 +17,7 @@ const WorldClocksContainer = () => {
   useEffect(() => {
     setTimeout(() => {
       fetchTimeZones()
-    }, 1500)
+    }, 1000)
   }) 
  
   const fetchTimeZones = async () => {
