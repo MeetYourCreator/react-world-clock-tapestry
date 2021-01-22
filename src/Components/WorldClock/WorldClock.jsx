@@ -1,24 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './WorldClock.css'
-import { showWorldTime } from "../../services/showWorldTime.js"
 
-const WorldClock = ({id, timestamp, zonename}) => {
-  const [worldTime, setWorldTime] = useState(showWorldTime(timestamp))
+const WorldClock = ({timestamp, gmtoffset, zonename}) => {
   
-  console.log(`${zonename}: ${worldTime}`)
-  console.log(`${zonename}: ${timestamp}`)
-
-  useEffect(() => {
-    setTimeout(() => {
-      setWorldTime(worldTime)
-    }, 1000)
-  }, []) 
-
 
   return (
     <>
-      <div id={id} className='world-time-container'>
-        <span className="world-clock">{worldTime}</span>
+      <div className={`world-clock-container`}>
+        <p className="world-clock">
+          <span className="unix-timestamp">{timestamp}</span> || <span className='gmtOffset'>{gmtoffset}</span>
+        </p>
         <p className="world-time-text">{zonename}</p>
       </div>
     </>

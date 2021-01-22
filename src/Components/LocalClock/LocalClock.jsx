@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './LocalClock.css'
-
-
-import { showLocalTime } from '../../services/showLocalTime.js'
+import { showLocalTime } from '../../services/time.js'
 
 const LocalClock = () => {
 const [localTime, setLocalTime] = useState(showLocalTime())
