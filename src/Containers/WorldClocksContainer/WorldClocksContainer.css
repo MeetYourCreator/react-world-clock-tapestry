@@ -1,0 +1,11 @@
+.world-time-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid #000000;
+  border-right: 2px solid #fac931;
+  border-bottom: 2px solid #fac931;
+  border-left: 2px solid #fac931;
+}
+
