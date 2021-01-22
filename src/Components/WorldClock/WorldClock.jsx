@@ -2,13 +2,12 @@ import React from 'react'
 // import { v4 as uuid4 } from "uuid"
 import './WorldClock.css'
 
-const WorldClock = ({id, worldtime, timestamp, zonename}) => {
+const WorldClock = ({key, timestamp, zonename}) => {
   
 
   return (
     <>
-      <div id={id}
-        // key={uuid4()}
+      <div id={key}
         //passing a prop called worldtime with a value of timestamp
         worldtime={timestamp} className='world-time-container'>
         <span className="world-clock">{timestamp}</span>
