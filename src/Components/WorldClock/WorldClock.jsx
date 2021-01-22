@@ -1,14 +1,15 @@
 import React from 'react'
-// import { v4 as uuid4 } from "uuid"
 import './WorldClock.css'
 
-const WorldClock = ({showzonetime, timestamp, zonename}) => {
+const WorldClock = ({timestamp, gmtoffset, zonename}) => {
   
 
   return (
     <>
-      <div className={`world-clock-container`} showzonetime={timestamp}>
-        <span className="world-clock">{timestamp}</span>
+      <div className={`world-clock-container`}>
+        <p className="world-clock">
+          <span className="unix-timestamp">{timestamp}</span> || <span className='gmtOffset'>{gmtoffset}</span>
+        </p>
         <p className="world-time-text">{zonename}</p>
       </div>
     </>

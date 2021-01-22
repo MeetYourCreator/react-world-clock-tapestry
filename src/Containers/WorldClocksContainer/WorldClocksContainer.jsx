@@ -9,7 +9,7 @@ const WorldClocksContainer = () => {
   const [allTimeZones, setAllTimeZones] = useState([])
   const [worldtime, setWorldTime] = useState()
   // console.log(`WorldClocks(allTimeZones): ${allTimeZones}`)
-  // console.log(`WorldClocks(filterFn): ${filterFn}`)
+  
   //  useEffect(() => {
   //    setTimeout(() => setWorldTime(worldtime), 1000)
   //  })
@@ -17,12 +17,9 @@ const WorldClocksContainer = () => {
   useEffect(() => {
     setTimeout(() => {
       fetchTimeZones()
-    }, 2000)
+    }, 1500)
   }) 
-  // useEffect(() => {
-  //   setWorldTime(worldtime)
-  // }, [])
-
+ 
   const fetchTimeZones = async () => {
     //getAllTimeZones from services/time.js
     const timezones = await getAllTimeZones();
@@ -38,7 +35,9 @@ const WorldClocksContainer = () => {
             key={uuid4()}
             className="world-clock-container"
             timestamp={worldclock.timestamp}
-          zonename={worldclock.zoneName}
+            gmtoffset={worldclock.gmtOffset}
+            time={`${worldclock.timestamp} - ${worldclock.gmtOffset}`}
+            zonename={worldclock.zoneName}
           />
     
       ))}
