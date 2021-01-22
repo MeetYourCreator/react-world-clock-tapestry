@@ -31,13 +31,12 @@ const WorldClocksContainer = () => {
     <>
       {allTimeZones.map((worldclock) => (
         
-          <WorldClock
-            key={uuid4()}
-            className="world-clock-container"
-            timestamp={worldclock.timestamp}
-            gmtoffset={worldclock.gmtOffset}
-            time={`${worldclock.timestamp} - ${worldclock.gmtOffset}`}
-            zonename={worldclock.zoneName}
+        <WorldClock
+          key={uuid4()}
+          className="world-clock-container"
+          timestamp={worldclock.timestamp}
+          gmtoffset={worldclock.gmtOffset}
+          zonename={worldclock.zoneName}
           />
     
       ))}
