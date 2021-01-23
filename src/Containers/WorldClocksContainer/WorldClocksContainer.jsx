@@ -7,14 +7,12 @@ import "./WorldClocksContainer.css"
 const WorldClocksContainer = () => {
   
   const [allTimeZones, setAllTimeZones] = useState([])
-  const [worldtime, setWorldTime] = useState()
-  // console.log(`WorldClocks(allTimeZones): ${allTimeZones}`)
-  
-  //  useEffect(() => {
-  //    setTimeout(() => setWorldTime(worldtime), 1000)
-  //  })
+  console.log(allTimeZones)
+  const [loading, setLoading] = useState(false)
+
   console.log('1-before useEffect')
   useEffect(() => {
+    setLoading(true)
     console.log('3-inside useEffect')
     setTimeout(fetchTimeZones, 1000)
     console.log("4-after setTimeout")
@@ -28,11 +26,10 @@ const WorldClocksContainer = () => {
     //setAllTimeZones with the value of the timezones that were just received
     setAllTimeZones(timezones)
   }
-   
+
   return (
     <>
       {allTimeZones.map((worldclock) => (
-        
         <WorldClock
           key={uuid4()}
           id={uuid4()}
@@ -40,8 +37,7 @@ const WorldClocksContainer = () => {
           unix={worldclock.timestamp}
           gmtoffset={worldclock.gmtOffset}
           zonename={worldclock.zoneName}
-          />
-    
+        />
       ))}
     </>
   )
