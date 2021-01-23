@@ -13,16 +13,18 @@ const WorldClocksContainer = () => {
   //  useEffect(() => {
   //    setTimeout(() => setWorldTime(worldtime), 1000)
   //  })
-
+  console.log('1-before useEffect')
   useEffect(() => {
-    setTimeout(() => {
-      fetchTimeZones()
-    }, 1000)
+    console.log('3-inside useEffect')
+    setTimeout(fetchTimeZones, 1000)
+    console.log("4-after setTimeout")
   }) 
+  console.log('2-after useEffect')
  
   const fetchTimeZones = async () => {
     //getAllTimeZones from services/time.js
     const timezones = await getAllTimeZones();
+    console.log('6-data recieved')
     //setAllTimeZones with the value of the timezones that were just received
     setAllTimeZones(timezones)
   }
@@ -31,13 +33,13 @@ const WorldClocksContainer = () => {
     <>
       {allTimeZones.map((worldclock) => (
         
-          <WorldClock
-            key={uuid4()}
-            className="world-clock-container"
-            timestamp={worldclock.timestamp}
-            gmtoffset={worldclock.gmtOffset}
-            time={`${worldclock.timestamp} - ${worldclock.gmtOffset}`}
-            zonename={worldclock.zoneName}
+        <WorldClock
+          key={uuid4()}
+          id={uuid4()}
+          className="world-clock-container"
+          unix={worldclock.timestamp}
+          gmtoffset={worldclock.gmtOffset}
+          zonename={worldclock.zoneName}
           />
     
       ))}
