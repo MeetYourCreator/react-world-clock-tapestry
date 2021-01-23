@@ -16,10 +16,8 @@ const WorldClocksContainer = () => {
   console.log('1-before useEffect')
   useEffect(() => {
     console.log('3-inside useEffect')
-    setTimeout(() => {
-      console.log('4-inside setTimeout')
-      fetchTimeZones()
-    }, 1000)
+    setTimeout(fetchTimeZones, 1000)
+    console.log("4-after setTimeout")
   }) 
   console.log('2-after useEffect')
  
