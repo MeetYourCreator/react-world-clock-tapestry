@@ -13,16 +13,20 @@ const WorldClocksContainer = () => {
   //  useEffect(() => {
   //    setTimeout(() => setWorldTime(worldtime), 1000)
   //  })
-
+  console.log('1-before useEffect')
   useEffect(() => {
+    console.log('3-inside useEffect')
     setTimeout(() => {
+      console.log('4-inside setTimeout')
       fetchTimeZones()
     }, 1000)
   }) 
+  console.log('2-after useEffect')
  
   const fetchTimeZones = async () => {
     //getAllTimeZones from services/time.js
     const timezones = await getAllTimeZones();
+    console.log('6-data recieved')
     //setAllTimeZones with the value of the timezones that were just received
     setAllTimeZones(timezones)
   }
