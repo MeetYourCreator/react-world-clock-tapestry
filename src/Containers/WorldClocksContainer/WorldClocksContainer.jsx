@@ -4,11 +4,12 @@ import { getAllTimeZones, showWorldTime } from '../../services/time.js'
 import WorldClock from '../../Components/WorldClock/WorldClock.jsx'
 import "./WorldClocksContainer.css"
 
-const WorldClocksContainer = () => {
+const WorldClocksContainer = ({onClick}) => {
   
   const [allTimeZones, setAllTimeZones] = useState([])
   console.log(allTimeZones)
   const [loading, setLoading] = useState(false)
+  const [clicked, setClicked] = useState(false)
 
   console.log('1-before useEffect')
   useEffect(() => {
@@ -27,17 +28,29 @@ const WorldClocksContainer = () => {
     setAllTimeZones(timezones)
   }
 
+  const handleClick = () => {
+    setClicked(true)
+  }
+
   return (
     <>
       {allTimeZones.map((worldclock) => (
-        <WorldClock
-          key={uuid4()}
-          id={uuid4()}
-          className="world-clock-container"
-          unix={worldclock.timestamp}
-          gmtoffset={worldclock.gmtOffset}
-          zonename={worldclock.zoneName}
-        />
+        <>
+          <button className='wcc-btn'
+            onClick={handleClick} 
+            disabled={clicked}
+          >WorldClocksContainer Button</button>
+          <WorldClock
+            onClick={() => console.log("hello")}
+            key={uuid4()}
+            id={uuid4()}
+            className="world-clock-container"
+            // utc={utc}
+            unix={worldclock.timestamp}
+            gmtoffset={worldclock.gmtOffset}
+            zonename={worldclock.zoneName}
+          />
+        </>
       ))}
     </>
   )
