@@ -9,6 +9,10 @@
   border-left: 2px solid #fac931;
 }
 
+.utc-timestamp {
+color: blue;
+}
+
 .unix-timestamp {
 color: #ff0fd7;
 }
@@ -17,6 +21,7 @@ color: #ff0fd7;
 color: #000000;
 font-size: 11px;
 }
+
 .world-clock {
 margin-top: 30px;
 font-family: 'Pangolin', cursive;
