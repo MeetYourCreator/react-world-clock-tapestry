@@ -13,10 +13,10 @@ const WorldClock = ({ allTimeZones, utc, id }) => {
             key={id}
             className="world-clock-container"
           >
-          <h1>UTC: {utc}</h1>
-            <h2 className="unix-timestamp">unix: {worldclock.timestamp}</h2>
-            <h3 className="gmtoffset"> gmtoffset: {worldclock.gmtOffset}</h3>
-            <h4 className="world-clock"> zonename: {worldclock.zoneName}</h4>
+          <h3>UTC: {utc}</h3>
+            <h4 className="unix-timestamp">unix: {worldclock.timestamp}</h4>
+            <h5 className="gmtoffset"> gmtoffset: {worldclock.gmtOffset}</h5>
+            <h6 className="world-clock"> zonename: {worldclock.zoneName}</h6>
           </div>
         </>
       ))}
