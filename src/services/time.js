@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const getAllTimeZones = async () => {
+export const getAllWorldTimeZones = async () => {
   const url = `http://api.timezonedb.com/v2.1/list-time-zone?key=7KJHTP7QS6J7&format=json`;
   const res = await axios.get(url);
   console.log('5-inside getAllTimeZones()')
