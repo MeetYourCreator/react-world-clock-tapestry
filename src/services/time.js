@@ -8,6 +8,20 @@ export const getAllTimeZones = async () => {
   return res.data.zones;
 }
 
+export const getUnix = async () => {
+  const url = `http://api.timezonedb.com/v2.1/list-time-zone?key=7KJHTP7QS6J7&format=json`;
+  const res = await axios.get(url);
+  const data = res.data.zones;
+  return data.map(timezone => timezone.timestamp)
+}
+
+export const getGmtOffset = async () => {
+  const url = `http://api.timezonedb.com/v2.1/list-time-zone?key=7KJHTP7QS6J7&format=json`;
+  const res = await axios.get(url)
+  const data = res.data.zones
+  return data.map(timezone => timezone.gmtOffset)
+}
+
 export const showLocalTime = () => {
   let time = new Date();
   let hour = time.getHours();
