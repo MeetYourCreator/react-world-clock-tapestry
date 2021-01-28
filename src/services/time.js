@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { v4 as uuid4 } from 'uuid'
 
 export const getAllTimeZones = async () => {
   const url = `http://api.timezonedb.com/v2.1/list-time-zone?key=7KJHTP7QS6J7&format=json`;
@@ -7,6 +8,25 @@ export const getAllTimeZones = async () => {
   console.log(res)
   return res.data.zones;
 }
+
+export const getUnix = async () => {
+  const url = `http://api.timezonedb.com/v2.1/list-time-zone?key=7KJHTP7QS6J7&format=json`;
+  const res = await axios.get(url);
+  const data = res.data.zones;
+  return data.timestamp
+}
+export const getGmtOffset = async () => {
+  const url = `http://api.timezonedb.com/v2.1/list-time-zone?key=7KJHTP7QS6J7&format=json`;
+  const res = await axios.get(url)
+  const data = res.data.zones
+  return data.gmtOffset
+}
+// export const getUtc = async () => {
+//   const url = `http://api.timezonedb.com/v2.1/list-time-zone?key=7KJHTP7QS6J7&format=json`;
+//   const res = await axios.get(url)
+//   const data = res.data.zones
+//   return data.map(timezone => { return (timezone.timestamp - timezone.gmtOffset) })
+// }
 
 export const showLocalTime = () => {
   let time = new Date();
