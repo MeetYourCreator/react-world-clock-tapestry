@@ -34,9 +34,7 @@ const WorldClocksContainer = () => {
             key={uuid4()}
             id={uuid4()}
             className="world-clock-container"
-            utc={worldclock.timestamp - worldclock.gmtOffset}
             unix={worldclock.timestamp}
-            gmtoffset={worldclock.gmtOffset}
             zonename={worldclock.zoneName}
           />
         
