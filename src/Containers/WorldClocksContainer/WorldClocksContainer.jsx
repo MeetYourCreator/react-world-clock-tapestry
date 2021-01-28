@@ -1,11 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { v4 as uuid4 } from 'uuid'
-import {
-  getAllTimeZones,
-  getUnix,
-  getGmtOffset,
-  // getUtc
-} from '../../services/time.js'
+import { getAllTimeZones, showWorldTime } from '../../services/time.js'
 import WorldClock from '../../Components/WorldClock/WorldClock.jsx'
 import "./WorldClocksContainer.css"
 
@@ -15,6 +10,7 @@ const WorldClocksContainer = () => {
   const [utc, setUtc] = useState(allTimeZones)
   // const [utc, setUtc] =useState('')
   console.log(allTimeZones)
+  
   
   console.log('1-before useEffect')
   useEffect(() => {
@@ -35,15 +31,30 @@ const WorldClocksContainer = () => {
     setAllTimeZones(timezones)
   }
 
+  // const timestampToEpoch = () => {
+  //   let d = new Date()
+  //   console.log(d)
+  // }
+  // console.log(timestampToEpoch())
 
+  const timestampToEpoch = (a) => {
+    let d = new Date(a)
+    return d
+  }
+
+  
   return (
     <>
-      <WorldClock
-        id={uuid4()}
-        allTimeZones={allTimeZones}
-        utc={utc}
-        // utc={utc}
-      />
+      {allTimeZones.map((worldclock) => (
+        <WorldClock
+          key={uuid4()}
+          id={uuid4()}
+          className="world-clock-container"
+          timeZoneTimestamp={worldclock.timestamp}
+          // handleTime={timestampToEpoch(worldclock.timestamp)}
+          zonename={worldclock.zoneName}
+        />
+      ))}
     </>
   )
 }
