@@ -1,7 +1,9 @@
-import React, { useState } from "react"
-import "./WorldClock.css"
+import React, { useState } from 'react'
+import { DateTime } from 'luxon'
+import './WorldClock.css'
 
-const WorldClock = ({ id, timeZoneTimestamp, className, zonename }) => {
+const WorldClock = ({ id, unix, className, zonename }) => {
+
   return (
     <>
       <div id={id} className={className}>
@@ -15,8 +17,9 @@ const WorldClock = ({ id, timeZoneTimestamp, className, zonename }) => {
           {/* <span className="utc-timestamp">time: {time}</span>
           <span className="utc-timestamp">utc: {utc}</span> */}
           {/* {console.log(`In the return this is the time: ${time}`)} */}
-
-          <span className="unix-timestamp">{timeZoneTimestamp}</span>
+         
+          <span className="unix-timestamp">{unix}</span>
+         
         </p>
         <p className="world-time-text">{zonename}</p>
       </div>
