@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import './WorldClock.css'
 
 const WorldClock = ({ id, unix, className, zonename }) => {

@@ -1,6 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import './LocalClock.css'
+import styled from 'styled-components'
 import { showLocalTime } from '../../services/time.js'
+
+const StyledLocalTimeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid #fac931;
+  border-right: 2px solid #fac931;
+  border-bottom: 2px solid #fac931;
+  border-left: 2px solid #fac931;
+`
+
+const StyledLocalClock = styled.div`
+  margin-top: 20px;
+  font-family: "Pangolin", cursive;
+  color: #ff0fd7;
+`
+const StyledLocalText = styled.p`
+margin-bottom: -20px;
+border-top: 2px solid black;
+justify-content: space-between;
+align-items: flex-end;
+display: flex;
+color: black;
+font-size: 15px;
+font-family: 'Noto Sans TC', sans-serif;
+`
 
 const LocalClock = () => {
 const [localTime, setLocalTime] = useState(showLocalTime())
@@ -16,11 +43,10 @@ const [localTime, setLocalTime] = useState(showLocalTime())
   
   return (
     <>
-      <div id="local-time-container">
-        <div id="local-clock">{localTime}</div>
-        
-          <p id="time-text">LocalTime</p>
-      </div>
+      <StyledLocalTimeContainer>
+        <StyledLocalClock>{localTime}</StyledLocalClock>
+        <StyledLocalText>LocalTime</StyledLocalText>
+      </StyledLocalTimeContainer>
     </>
   )
 
