@@ -35,3 +35,15 @@ export const showISO = (timestampMS) => {
   const zoneISOhhmmss = zoneISO.slice(11,19)
   return zoneISOhhmmss
 }
+
+export const removeContinent = (name) => {
+  const nameArray = name.split('')
+  const indexOfForwardSlash = nameArray.findIndex((character) => character === '/')
+  const nameArray2 = name.split(',')
+  const nameToString = nameArray2.toString()
+  const country = nameToString.slice(indexOfForwardSlash).replace('/', '').replace('_', ' ').replace('_', '  ')
+   
+
+  return country
+  
+}

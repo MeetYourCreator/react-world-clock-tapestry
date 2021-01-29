@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { DateTime } from 'luxon'
+import React from 'react'
 import './WorldClock.css'
 
 const WorldClock = ({ id, unix, className, zonename }) => {
