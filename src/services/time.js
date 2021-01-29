@@ -30,7 +30,7 @@ export const showLocalTime = () => {
   
 
 }
-export const showISOTime = (timestampMS) => {
+export const showISO = (timestampMS) => {
   const zoneISO = new Date(timestampMS * 1000).toISOString();
   return zoneISO;
 

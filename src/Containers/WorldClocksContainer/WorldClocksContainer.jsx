@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { v4 as uuid4 } from 'uuid'
-import { getAllTimeZones } from '../../services/time.js'
+import { getAllTimeZones, showISO } from '../../services/time.js'
 import { DateTime } from 'luxon'
 import WorldClock from '../../Components/WorldClock/WorldClock.jsx'
 import "./WorldClocksContainer.css"
@@ -34,7 +34,7 @@ const WorldClocksContainer = () => {
             key={uuid4()}
             id={uuid4()}
             className="world-clock-container"
-            unix={worldclock.timestamp}
+            unix={showISO(worldclock.timestamp)}
             zonename={worldclock.zoneName}
           />
         
