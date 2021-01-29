@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { DateTime } from 'luxon'
 import './WorldClock.css'
 
-const WorldClock = ({ id, unix, utc, className, gmtoffset, zonename }) => {
+const WorldClock = ({ id, unix, className, zonename }) => {
 
 
   return (
