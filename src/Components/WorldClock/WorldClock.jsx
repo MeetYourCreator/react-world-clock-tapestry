@@ -19,7 +19,7 @@ const WorldClock = ({ id, unix, className, zonename }) => {
           <span className="utc-timestamp">utc: {utc}</span> */}
           {/* {console.log(`In the return this is the time: ${time}`)} */}
          
-          <span className="unix-timestamp">unix :{unix}</span>
+          <span className="unix-timestamp">{unix}</span>
          
         </p>
         <p className="world-time-text">{zonename}</p>

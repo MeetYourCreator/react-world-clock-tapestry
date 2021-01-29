@@ -32,8 +32,8 @@ export const showLocalTime = () => {
 }
 export const showISO = (timestampMS) => {
   const zoneISO = new Date(timestampMS * 1000).toISOString();
-  return zoneISO;
-
+  const zoneISOhhmmss = zoneISO.slice(11,19)
+  return zoneISOhhmmss
 }
 
 // export const showWorldTime = (unix, gmt) => {
