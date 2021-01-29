@@ -25,7 +25,6 @@ const WorldClocksContainer = () => {
     setAllTimeZones(timezones)
   }
 
-
   return (
     <>
       {allTimeZones.map((worldclock) => (
