@@ -29,7 +29,6 @@ const WorldClocksContainer = () => {
   return (
     <>
       {allTimeZones.map((worldclock) => (
-
           <WorldClock
             key={uuid4()}
             id={uuid4()}
