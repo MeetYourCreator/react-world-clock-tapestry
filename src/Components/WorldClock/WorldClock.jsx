@@ -3,6 +3,7 @@ import styled from "styled-components"
 import "./WorldClock.css"
 
 const ClockContainer = styled.section`
+  background-color: #dcdcdc;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +14,6 @@ const ClockContainer = styled.section`
   border-left: 2px solid #fac931;
   padding-top: 30px;
   font-family: "Pangolin", cursive;
-  font-size: 18px;
 `
 const Location = styled.p`
   margin-bottom: 5px;
@@ -30,6 +30,7 @@ const Location = styled.p`
 `
 
 const Clock = styled.p`
+  font-size: 30px;
   color: #ff0fd7;
 `
 const WorldClock = ({ id, unix, zonename, country }) => {
@@ -47,6 +48,7 @@ const WorldClock = ({ id, unix, zonename, country }) => {
           </Location>
         </ClockContainer>
       )}
+      
     </>
   )
 }
