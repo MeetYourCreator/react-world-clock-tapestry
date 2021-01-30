@@ -38,7 +38,7 @@ export const showISO = (timestampMS, styleLight, styleDark) => {
 
 export const formatZoneName = (zoneStr) => {
   
-  console.log(`time.js, 41 zoneStr: ${zoneStr}`)
+  console.log('%c%s','color: green; background: yellow',`time.js, 41 zoneStr: ${zoneStr}`)
 
   const zoneArr = zoneStr.split('')
   console.log(`time.js, 44 zoneArr: ${zoneArr}`)

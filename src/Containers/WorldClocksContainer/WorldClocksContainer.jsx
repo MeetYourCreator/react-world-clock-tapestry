@@ -12,7 +12,7 @@ const WorldClocksContainer = () => {
   const [allTimeZones, setAllTimeZones] = useState([])
   console.log(allTimeZones)
 
-  console.log("1-before useEffect")
+  console.log('%c%s','color: yellow; background: blue; font-size: 20px;','1-before useEffect')
   useEffect(() => {
     console.log("3-inside useEffect")
     setTimeout(fetchWorldTimeZones, 1000)
