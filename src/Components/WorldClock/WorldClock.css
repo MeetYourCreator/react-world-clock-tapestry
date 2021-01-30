@@ -7,30 +7,16 @@
   border-right: 2px solid #fac931;
   border-bottom: 2px solid #fac931;
   border-left: 2px solid #fac931;
-}
-
-.utc-timestamp {
-color: blue;
+    padding-top: 30px;
+  font-family: "Pangolin", cursive;
+  font-size: 18px;
 }
 
 .unix-timestamp {
 color: #ff0fd7;
 }
 
-.gmtoffset {
-color: #000000;
-font-size: 11px;
-}
-
-.world-clock {
-margin-top: 30px;
-font-family: 'Pangolin', cursive;
-font-size: 18px;
-
-}
-
-
-.world-time-text {
+.location-text {
 margin-bottom: 5px;
 margin-left: 7px;
 margin-right: 7px;
