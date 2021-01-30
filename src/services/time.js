@@ -27,23 +27,26 @@ export const showLocalTime = () => {
   second = second < 10 ? '0' + second : second;
 
   return hour + ':' + minute + ':' + second + am_pm
-  
+
 }
 
 export const showISO = (timestampMS) => {
   const zoneISO = new Date(timestampMS * 1000).toISOString();
-  const zoneISOhhmmss = zoneISO.slice(11,19)
+  const zoneISOhhmmss = zoneISO.slice(11, 19)
   return zoneISOhhmmss
 }
 
-export const removeContinent = (name) => {
-  const nameArray = name.split('')
-  const indexOfForwardSlash = nameArray.findIndex((character) => character === '/')
-  const nameArray2 = name.split(',')
-  const nameToString = nameArray2.toString()
+export const formatZoneName = (zone) => {
+  
+  const zoneArr = zone.split('')
+  const indexOfForwardSlash = zoneArr.findIndex((character) => character === '/')
+
+  const zoneArr2 = zone.split(',')
+  const nameToString = zoneArr2.toString()
+  
   const country = nameToString.slice(indexOfForwardSlash).replace('/', '').replace('_', ' ').replace('_', '  ')
-   
+
 
   return country
-  
+
 }
