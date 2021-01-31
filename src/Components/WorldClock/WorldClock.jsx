@@ -3,6 +3,7 @@ import styled from "styled-components"
 import "./WorldClock.css"
 
 const ClockContainer = styled.section`
+  
   background-image: linear-gradient(to top right, #fa255e, #c39ea0, #f8e5e5);
   display: flex;
   flex-direction: column;
@@ -29,9 +30,15 @@ const Location = styled.p`
   font-family: "Noto Sans TC", sans-serif;
 `
 
-const Clock = styled.p`
-  font-size: 30px;
+const Clock = styled.div`
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 50%);
+`
+
+const ClockText = styled.p`
+  font-size: 25px;
   color: #000000;
+  padding: 30px;
 `
 const WorldClock = ({ id, unix, zonename, country }) => {
   
@@ -41,7 +48,10 @@ const WorldClock = ({ id, unix, zonename, country }) => {
 
         {country !== zonename && (
           <ClockContainer>
-            <Clock>{unix}</Clock>
+          <Clock>
+            <ClockText>{unix}
+            </ClockText>
+          </Clock>
             <Location>
               {zonename}, {country}
             </Location>
