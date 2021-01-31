@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { showLocalTime } from "../../services/time.js"
 
-const StyledLocalTimeContainer = styled.div`
+const LocalClockContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,10 +42,10 @@ const LocalClock = () => {
 
   return (
     <>
-      <StyledLocalTimeContainer>
+      <LocalClockContainer>
         <StyledLocalClock>{localTime}</StyledLocalClock>
         <StyledLocalText>LocalTime</StyledLocalText>
-      </StyledLocalTimeContainer>
+      </LocalClockContainer>
     </>
   )
 }

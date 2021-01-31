@@ -2,8 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import "./WorldClock.css"
 
-const ClockContainer = styled.section`
-  
+const WorldClockContainer = styled.section`
   background-image: linear-gradient(to top right, #fa255e, #c39ea0, #f8e5e5);
   display: flex;
   flex-direction: column;
@@ -16,6 +15,15 @@ const ClockContainer = styled.section`
   padding-top: 30px;
   font-family: "Pangolin", cursive;
 `
+const Clock = styled.div`
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 50%);
+`
+const ClockText = styled.p`
+  font-size: 25px;
+  color: #000000;
+  padding: 30px;
+  `
 const Location = styled.p`
   margin-bottom: 5px;
   margin-left: 7px;
@@ -29,33 +37,21 @@ const Location = styled.p`
   font-size: 11px;
   font-family: "Noto Sans TC", sans-serif;
 `
-
-const Clock = styled.div`
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 50%);
-`
-
-const ClockText = styled.p`
-  font-size: 25px;
-  color: #000000;
-  padding: 30px;
-`
 const WorldClock = ({ id, unix, zonename, country }) => {
   
-
   return (
     <>
-
         {country !== zonename && (
-          <ClockContainer>
-          <Clock>
-            <ClockText>{unix}
-            </ClockText>
-          </Clock>
+          <WorldClockContainer>
+            <Clock>
+              <ClockText>
+                {unix}
+              </ClockText>
+             </Clock>
             <Location>
               {zonename}, {country}
             </Location>
-          </ClockContainer>
+          </WorldClockContainer>
         )}
     </>
   )
