@@ -1,11 +1,11 @@
 body {
-background-color:rgb(252, 249, 249)
+background-color: #ebe9f0;
 }
 
 .clock-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
   grid-template-rows: 200px;
-  border-left: 2px solid #fac931;
+  border-left: 2px solid #ebe9f0;
   
 }

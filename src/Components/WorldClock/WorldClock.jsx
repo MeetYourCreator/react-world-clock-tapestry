@@ -3,7 +3,7 @@ import styled from "styled-components"
 import "./WorldClock.css"
 
 const ClockContainer = styled.section`
-  background-color: #dcdcdc;
+  background-image: linear-gradient(to top right, #fa255e, #c39ea0, #f8e5e5);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,24 +31,22 @@ const Location = styled.p`
 
 const Clock = styled.p`
   font-size: 30px;
-  color: #ff0fd7;
+  color: #000000;
 `
 const WorldClock = ({ id, unix, zonename, country }) => {
   
 
   return (
     <>
-      {country !== zonename && (
-        <ClockContainer>
-          <Clock>
-            {unix}
-          </Clock>
-          <Location>
-            {zonename}, {country}
-          </Location>
-        </ClockContainer>
-      )}
-      
+
+        {country !== zonename && (
+          <ClockContainer>
+            <Clock>{unix}</Clock>
+            <Location>
+              {zonename}, {country}
+            </Location>
+          </ClockContainer>
+        )}
     </>
   )
 }
