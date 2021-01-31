@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { showLocalTime } from "../../services/time.js"
 
 const LocalClockContainer = styled.section`
+  background-image: linear-gradient(to top right, #eee8aa, #c39ea0);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,15 +12,12 @@ const LocalClockContainer = styled.section`
   border-right: 2px solid #fac931;
   border-bottom: 2px solid #fac931;
   border-left: 2px solid #fac931;
-  background-color: #EEE8AA;
+  padding-top: 30px;
 `
-
 const Clock = styled.div`
-  margin-top: 20px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 50%);
 `
-
 const ClockText = styled.p`
   font-size: 25px;
   font-family: "Pangolin", cursive;
@@ -34,14 +32,11 @@ const Location = styled.p`
   text-align: center;
   justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  align-items: flex-end;
   display: flex;
   color: black;
   font-size: 11px;
   font-family: "Noto Sans TC", sans-serif;
 `
-
 const LocalClock = () => {
   const [localTime, setLocalTime] = useState(showLocalTime())
 
@@ -55,13 +50,9 @@ const LocalClock = () => {
     <>
       <LocalClockContainer>
         <Clock>
-          <ClockText>
-            {localTime}
-          </ClockText>
+          <ClockText>{localTime}</ClockText>
         </Clock>
-          <Location>
-            LocalTime
-          </Location>
+        <Location>LocalTime</Location>
       </LocalClockContainer>
     </>
   )

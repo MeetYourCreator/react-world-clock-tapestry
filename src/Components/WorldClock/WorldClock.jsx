@@ -13,17 +13,21 @@ const WorldClockContainer = styled.section`
   border-bottom: 2px solid #fac931;
   border-left: 2px solid #fac931;
   padding-top: 30px;
-  font-family: "Pangolin", cursive;
+  
 `
+
 const Clock = styled.div`
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 50%);
 `
+
 const ClockText = styled.p`
   font-size: 25px;
+  font-family: "Pangolin", cursive;
   color: #000000;
   padding: 30px;
-  `
+`
+
 const Location = styled.p`
   margin-bottom: 5px;
   margin-left: 7px;
@@ -38,21 +42,18 @@ const Location = styled.p`
   font-family: "Noto Sans TC", sans-serif;
 `
 const WorldClock = ({ id, unix, zonename, country }) => {
-  
   return (
     <>
-        {country !== zonename && (
-          <WorldClockContainer>
-            <Clock>
-              <ClockText>
-                {unix}
-              </ClockText>
-             </Clock>
-            <Location>
-              {zonename}, {country}
-            </Location>
-          </WorldClockContainer>
-        )}
+      {country !== zonename && (
+        <WorldClockContainer>
+          <Clock>
+            <ClockText>{unix}</ClockText>
+          </Clock>
+          <Location>
+            {zonename}, {country}
+          </Location>
+        </WorldClockContainer>
+      )}
     </>
   )
 }
