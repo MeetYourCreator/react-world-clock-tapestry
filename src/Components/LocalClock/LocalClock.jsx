@@ -19,7 +19,7 @@ const Clock = styled.div`
   background-color: rgba(255, 255, 255, 50%);
 `
 const ClockText = styled.p`
-  font-size: 25px;
+  font-size: 15px;
   font-family: "Pangolin", cursive;
   color: #ff0fd7;
   padding: 30px;

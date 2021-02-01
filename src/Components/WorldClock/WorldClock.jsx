@@ -25,7 +25,7 @@ const ClockText = styled.p`
   font-size: 25px;
   font-family: "Pangolin", cursive;
   color: #000000;
-  padding: 30px;
+  padding: 20px;
 `
 
 const Location = styled.p`
