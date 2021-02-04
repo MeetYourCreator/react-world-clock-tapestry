@@ -3,6 +3,10 @@ import styled from "styled-components"
 import "./WorldClock.css"
 
 const WorldClockContainer = styled.section`
+  :root {
+    --neon-text-color: #f40;
+    --neon-border-color: #08f;
+  }
   background-image: linear-gradient(to top right, #fa255e, #c39ea0, #f8e5e5);
   display: flex;
   flex-direction: column;
@@ -13,19 +17,29 @@ const WorldClockContainer = styled.section`
   border-bottom: 2px solid #fac931;
   border-left: 2px solid #fac931;
   padding-top: 30px;
-  
 `
 
 const Clock = styled.div`
-  border-radius: 50%;
+  :root {
+    --neon-text-color: #f40;
+    --neon-border-color: #08f;
+  }
+  box-sizing: border-box;
+  position: relative;
+  width: 150px;
+  height: auto;
+  border: 3px solid #000000;
+  border-radius: 10%;
   background-color: rgba(255, 255, 255, 50%);
 `
 
 const ClockText = styled.p`
-  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
   font-family: "Pangolin", cursive;
   color: #000000;
-  padding: 20px;
 `
 
 const Location = styled.p`

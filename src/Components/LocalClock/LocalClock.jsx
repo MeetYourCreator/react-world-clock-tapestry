@@ -15,14 +15,22 @@ const LocalClockContainer = styled.section`
   padding-top: 30px;
 `
 const Clock = styled.div`
-  border-radius: 50%;
+  box-sizing: border-box;
+  position: relative;
+  width: 150px;
+  height: auto;
+  border: 3px solid #000000;
+  border-radius: 10%;
   background-color: rgba(255, 255, 255, 50%);
 `
 const ClockText = styled.p`
-  font-size: 15px;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
   font-family: "Pangolin", cursive;
-  color: #ff0fd7;
-  padding: 30px;
+  color: #000000;
 `
 const Location = styled.p`
   margin-bottom: 5px;
