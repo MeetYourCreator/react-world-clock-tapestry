@@ -12,7 +12,8 @@ const LocalClockContainer = styled.section`
   border-right: 2px solid #fac931;
   border-bottom: 2px solid #fac931;
   border-left: 2px solid #fac931;
-  padding-top: 30px;
+  padding-top: 40px;
+  padding-bottom: 30px;
 `
 const Clock = styled.div`
   box-sizing: border-box;
@@ -33,9 +34,10 @@ const ClockText = styled.p`
   color: rgb(247, 1, 3);
 `
 const Location = styled.p`
+  margin-top: 15px;
+  margin-right: 7px;
   margin-bottom: 5px;
   margin-left: 7px;
-  margin-right: 7px;
   border-top: 2px solid black;
   text-align: center;
   justify-content: center;
