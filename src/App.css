@@ -13,7 +13,9 @@ background-color: #0047AB;
 .clock-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 360px);
-  grid-template-rows: 360px;
+  grid-template-rows: 200px;
   border-left: 2px solid #0047AB;
 }
 }
+
+
