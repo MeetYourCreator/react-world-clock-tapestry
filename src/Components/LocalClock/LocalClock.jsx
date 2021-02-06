@@ -27,7 +27,7 @@ const Clock = styled.div`
   background-color: #151617;
   @media (max-width: 505px) {
     width: 310px;
-    height: 250px;
+    height: auto;
   }
 `
 const ClockText = styled.p`
@@ -55,6 +55,9 @@ const Location = styled.p`
   color: black;
   font-size: 11px;
   font-family: "Noto Sans TC", sans-serif;
+  @media (max-width: 505px) {
+    font-size: 15px;
+  }
 `
 const LocalClock = () => {
   const [localTime, setLocalTime] = useState(showLocalTime())

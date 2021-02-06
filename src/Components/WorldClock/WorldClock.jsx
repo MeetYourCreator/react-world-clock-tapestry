@@ -24,6 +24,10 @@ const Clock = styled.div`
   border: 3px solid #000000;
   border-radius: 10%;
   background-color: #151617;
+  @media (max-width: 505px) {
+    width: 310px;
+    height: auto;
+  }
 `
 const ClockText = styled.p`
   display: flex;
@@ -33,6 +37,9 @@ const ClockText = styled.p`
   font-size: 15px;
   font-family: "Press Start 2P", cursive;
   color: rgb(247, 1, 3);
+  @media (max-width: 505px) {
+    font-size: 25px;
+  }
 `
 
 const Location = styled.p`
@@ -48,6 +55,9 @@ const Location = styled.p`
   color: black;
   font-size: 11px;
   font-family: "Noto Sans TC", sans-serif;
+  @media (max-width: 505px) {
+    font-size: 15px;
+  }
 `
 const WorldClock = ({ id, unix, zonename, country }) => {
   return (
