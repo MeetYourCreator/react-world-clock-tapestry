@@ -15,6 +15,8 @@ const LocalClockContainer = styled.section`
   padding-top: 40px;
   padding-bottom: 30px;
   @media (max-width: 505px) {
+    width: 320px;
+    height: auto;
   }
 `
 const Clock = styled.div`
@@ -26,7 +28,7 @@ const Clock = styled.div`
   border-radius: 10%;
   background-color: #151617;
   @media (max-width: 505px) {
-    width: 310px;
+    width: 290px;
     height: auto;
   }
 `
