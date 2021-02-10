@@ -63,6 +63,7 @@ const Location = styled.p`
     font-size: 15px;
   }
 `
+
 const LocalClock = () => {
   const [localTime, setLocalTime] = useState(showLocalTime())
 
