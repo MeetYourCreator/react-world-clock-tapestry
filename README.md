@@ -3,6 +3,7 @@
 ## [View Application](https://react-world-clock-tapestry.netlify.app/)
 
 ## Application Preview
+![test](https://raw.githubusercontent.com/MeetYourCreator/react-world-clock-tapestry/cee4cd07c5943f35828404b79d8de66d1421125b/react-world-clock-tapestry_thumbnail.png)
 
 ## Application  Dependencies
 
