@@ -35,6 +35,7 @@ const Clock = styled.div`
 `
 const ClockText = styled.p`
   display: flex;
+  margin: 40px 0px;
   text-shadow: 3px 3px 20px #f70300;
   justify-content: center;
   align-items: center;
@@ -57,8 +58,9 @@ const Location = styled.p`
   align-items: center;
   display: flex;
   color: black;
-  font-size: 11px;
+  font-size: 13px;
   font-family: "Noto Sans TC", sans-serif;
+  font-variant: small-caps;
   @media (max-width: 505px) {
     font-size: 15px;
   }
