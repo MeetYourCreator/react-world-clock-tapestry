@@ -41,6 +41,7 @@ const ClockText = styled.p`
     font-size: 25px;
   }
 `
+
 const Location = styled.p`
   margin-top: 15px;
   margin-right: 7px;
@@ -58,6 +59,7 @@ const Location = styled.p`
     font-size: 15px;
   }
 `
+
 const WorldClock = ({ id, unix, zonename, country }) => {
   return (
     <>
